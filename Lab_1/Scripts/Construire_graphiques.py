@@ -8,5 +8,10 @@ liste_fich = os.listdir("Lab_1/Données/Scatter")
 
 for fichier in liste_fich:
     #On ouvre chacun des fichiers
-    lvm = lvm_read.read(f"Lab_1/Données/Scatter/{fichier}", read_from_pickle=False)
-    lvm[0]['data']
+    print(fichier)
+    lvm = lvm_read.read(f"Lab_1/Données/Scatter/{fichier}", dump_file=False)
+    plt.plot(lvm[0]['data'], marker='.')
+    plt.ylabel("Potentiel [V]")
+    plt.xlabel("Temps [s]")
+    plt.legend(fichier)
+    plt.show()
