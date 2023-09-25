@@ -8,8 +8,8 @@ for fichier in liste_fich:
     #On ouvre chacun des fichiers
     lvm = lvm_read.read(f"Lab_1/Données/Histogrammes/Résistances/{fichier}", dump_file=False)
 
-    V_1 = lvm[0]['data'][:,0]
     V_2 = lvm[0]['data'][:,1]
+    V_1 = lvm[0]['data'][:,0] - V_2
 
     I = V_2/12
     R = V_1/I
