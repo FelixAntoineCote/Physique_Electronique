@@ -6,13 +6,14 @@ import os
 liste_fich = os.listdir("Lab_1/Données/Histogrammes/Résistances")
 for fichier in liste_fich:
     #On ouvre chacun des fichiers
-    print(fichier)
     lvm = lvm_read.read(f"Lab_1/Données/Histogrammes/Résistances/{fichier}", dump_file=False)
 
-    V = lvm[0]['data'][:,0]
-    I = lvm[0]['data'][:,1]
+    V_1 = lvm[0]['data'][:,0]
+    V_2 = lvm[0]['data'][:,1]
 
-    R = V/I
+    I = V_2/12
+    R = V_1/I
     moyenne = np.average(R)
     mediane = np.median(R)
-    print(f"Valeur de la résistance: {moyenne} ohms avec médiane de {mediane}")
+    omega = 3*np.std(R)
+    print(f"Valeur de la résistance: {moyenne} ohms avec une médiane de {mediane} et un écart-type de {omega}\n")
