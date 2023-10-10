@@ -27,4 +27,4 @@ for i in range(6):
 plt.legend()
 plt.xlabel("Potentiel [V]")
 plt.ylabel("Courant [A]")
-plt.savefig("Lab_3/Graphique_transistor.png")
+plt.savefig("Lab_3/Graphiques/Graphique_transistor.png")
