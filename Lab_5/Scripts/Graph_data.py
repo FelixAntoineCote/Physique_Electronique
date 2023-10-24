@@ -5,6 +5,7 @@ import os
 folder = os.listdir("Lab_5/Données")
 
 for i in folder:
+    #S'assurer que l'entête prenne la forme [second, Volt_1, Volt_2] pour tous les csv.
     data = pd.read_csv(f"Lab_5/Données/{i}", index_col=0)
     plt.plot(data["Volt_1"], label="Canal 1")
     plt.plot(data["Volt_2"], label="Canal 2 (Sortie)")
